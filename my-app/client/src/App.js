@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
+import './scss/style.css';
+import RouterContent from "./Routes";
 
 function App() {
   return (
     <div className="App">
-      <h1>hello</h1>
+     <RouterContent />
     </div>
   );
 }

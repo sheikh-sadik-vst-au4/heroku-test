@@ -1,0 +1,45 @@
+
+user -->test [testid]
+techers -test1,test2,test3
+test --[quesu1,question2]
+
+test {
+    questions : [
+        {
+            question:"how are you?",
+            options :{
+                option1:"fine",
+                option2:"good",
+                option3:"okay",
+                option4:"not okay",
+            }
+            answer:"options.option3",
+            marks:20
+
+        },
+         {
+            question:"how are you?",
+            options :{
+                option1:"fine",
+                option2:"good",
+                option3:"okay",
+                option4:"not okay",
+            }
+            answer:"options.option3",
+            marks:20
+
+        },
+         {
+            question:"how are you?",
+            options :{
+                option1:"fine",
+                option2:"good",
+                option3:"okay",
+                option4:"not okay",
+            }
+            answer:"options.option3",
+            marks:20
+
+        }
+    ]
+}

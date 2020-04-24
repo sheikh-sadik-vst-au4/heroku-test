@@ -1,0 +1,9 @@
+.result-heading{
+    margin: 0 0 10px;
+    font-weight: normal;
+    font-family: 'Open Sans','arial';
+    color: inherit;
+    text-rendering: optimizelegibility;
+    text-transform: capitalize;
+    font-size: 30px;
+}

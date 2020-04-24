@@ -1,0 +1,18 @@
+h2{
+  color: #ffa500;
+  font-size: 30px;
+}
+
+.display-3{
+  color: #ffa500;
+}
+.underline{
+  text-decoration: underline;
+  margin: 2px;
+}
+.card-text{
+  text-align: justify;
+}
+/* .card-height{
+  height: 121px !important;
+} */
