@@ -1,6 +1,7 @@
 import React from "react";
-import TestTable from "./resultTable";
+import TestTable from "./ResultTable";
 import ReactToExcel from "react-html-table-to-excel";
+
 const testList = (props) => {
   return (
     <div>

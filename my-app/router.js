@@ -20,6 +20,7 @@ router.get('/test/read/:id', test.readById);
 router.get('/user/read/:id', user.readById);
 router.get('/student/read/:id', student.readById);
 router.get('/result/read/:id', result.read);
+router.get('/question/read/:id',question.readById);
 
 //update
 router.put('/test/update/:id', test.updateById);

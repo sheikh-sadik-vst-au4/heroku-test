@@ -6,7 +6,7 @@ const HistoryTable = (props) => {
   return (
     <React.Fragment>
       <h1 className="profile-heading">Previous Tests</h1>
-      <table className="table table-hover mt-2">
+      <table className="table table-hover table-responsive mt-2">
         <thead className="text-center">
           <tr>
             <th scope="col">SR.</th>
@@ -28,16 +28,16 @@ const HistoryTable = (props) => {
                   <span className="badge badge-dark">{index + 1}</span>
                 </td>
                 <td>
-                  <span className="badge badge-info text-capitalize">
+                  <span className="text-capitalize">
                     {item.name}
                   </span>
                 </td>
                 <td>
-                  <span className="badge badge-warning">{item.time}</span>
+                  <span className="">{item.time}</span>
                 </td>
                 {item.publish ? (
                   <td>
-                    <a href={item.url} className="badge badge-primary" target="_blank"  rel="noopener noreferrer">
+                    <a href={item.url} className="" target="_blank"  rel="noopener noreferrer">
                       {item.url}
                     </a>
                   </td>

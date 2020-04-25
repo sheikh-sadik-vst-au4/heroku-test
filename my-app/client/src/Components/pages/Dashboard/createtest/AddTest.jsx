@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TestForm from "./testForm";
+import TestForm from "./TestForm";
 import QuestionForm from "./QuestionForm";
 import Showtest from "./Showtest";
 import PublishTest from "./PublishTest";
@@ -13,6 +13,7 @@ class AddTest extends Component {
     testName: app.getTestName(),
     isPublished: false,
     testId: app.getTestId(),
+    questionId: null,
     question: null,
     option1: null,
     option2: null,
@@ -22,6 +23,24 @@ class AddTest extends Component {
     marks: null,
     questionPaper: null,
     totalMarks: null,
+    showModal: false,
+  };
+
+  fetchTotal = () => {
+    let total = this.state.questionPaper.slice();
+    let totalPoint = [];
+    if (total) {
+      total.map((item) => {
+        return totalPoint.push(item.marks);
+      });
+    }
+    let totalCopy = totalPoint.reduce((acc, curr) => {
+      return (acc = acc + curr);
+    }, 0);
+
+    this.setState({
+      totalMarks: totalCopy,
+    });
   };
 
   componentDidMount() {
@@ -31,11 +50,13 @@ class AddTest extends Component {
   fetchTest = async () => {
     await axios
       .get(`/test/read/${app.getTestId()}`)
-      .then((response) => {  
+      .then((response) => {
         this.setState({
           questionPaper: response.data.questions,
-          totalMarks:response.data.totalmarks
         });
+      })
+      .then(() => {
+        this.fetchTotal();
       })
       .catch((error) => console.log(error));
   };
@@ -107,10 +128,6 @@ class AddTest extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  questionEditHandler = (questionId) => {
-    alert(`edit handler ${questionId}`);
-  };
-
   questionDeleteHandler = async (questionId) => {
     await axios
       .delete(`/question/delete/${questionId}`)
@@ -144,6 +161,7 @@ class AddTest extends Component {
     const test = {
       _id: app.getTestId(),
       publish: true,
+      totalmarks: this.state.totalMarks,
       url: `${window.location.origin}/test/${app.getTestId()}`,
     };
 
@@ -167,6 +185,18 @@ class AddTest extends Component {
         }
       })
       .catch((error) => console.log(error));
+  };
+
+  showModal = () => {
+    this.setState({
+      showModal: !this.state.showModal,
+    });
+  };
+
+  editQuestion = (id) => {
+    this.setState({
+      questionId: id,
+    });
   };
 
   viewHandler = () => {
@@ -199,10 +229,14 @@ class AddTest extends Component {
               testName={this.state.testName}
               testQuestion={this.state.questionPaper}
               totalMarks={this.state.totalMarks}
-              editQuestion={this.questionEditHandler}
+              modalState={this.state.showModal}
+              questionId={this.state.questionId}
+              showModal={this.showModal}
+              editQuestion={this.editQuestion}
               deleteQuestion={this.questionDeleteHandler}
               save={this.saveHandler}
               saveAndPublish={this.saveAndPublishHandler}
+              fetchTest={this.fetchTest}
             />
           )}
         </React.Fragment>

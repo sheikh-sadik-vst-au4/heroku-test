@@ -3,7 +3,7 @@ import axios from "axios";
 import "./Usertest.css";
 import UserForm from "./UserForm";
 import swal from "sweetalert";
-import Error from "./Error";
+import Error from "../../basic/Error";
 import UserTestPaper from "./UserTestPaper";
 import StudentResult from "./StudentResult";
 import app from "../../../appsBasic";
@@ -78,16 +78,6 @@ class UserContainer extends Component {
                 studentName: app.getStudentname(),
                 showUserForm: false,
               });
-              // let studentDetails = {
-              //   StudentId: response.data._id,
-              //   StudentName: response.data.name,
-              // };
-
-              // const student = new Student(studentDetails);
-              // this.setState({
-              //   studentName: student.getStudentDetails().StudentName,
-              //   userId: student.getStudentDetails().StudentId,
-              // });
             });
           }
         });
@@ -108,7 +98,6 @@ class UserContainer extends Component {
       .then((response) => {
         if (response.status === 200) {
           swal("Test Submited!!", "redirected...", "success").then(() => {
-            
             this.setState({
               showUserTestPaper: false,
               showUserForm: false,
@@ -118,16 +107,6 @@ class UserContainer extends Component {
             app.removeShowUserTestPaper();
             app.removeStudentId();
             app.removeStudentname();
-            
-            // this.setState({
-            //   studentName: null,
-            //   userId: null,
-            //   testId: null,
-            //   isPublished: null,
-            //   testName: null,
-            //   questionCollection: null,
-            //   totalMarks: null,
-            // });
           });
         } else {
           swal("Error", "something went wrong...", "error");
@@ -152,7 +131,7 @@ class UserContainer extends Component {
 
   veiwHandler = () => {
     if (this.state.showError === true) {
-      return <Error></Error>;
+      return <Error message="sorry test not publish yet!!!"></Error>;
     }
 
     if (this.state.showUserForm === true) {

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const TestForm = (props) => {
   return (
@@ -12,6 +12,7 @@ const TestForm = (props) => {
               type="text"
               placeholder="enter test name here"
               onChange={props.testInput}
+              required
             ></input>
           </div>
           <input

@@ -18,6 +18,7 @@ const QuestionForm = (props) => {
                   className="form-control user-input"
                   name="question"
                   onChange={props.questionInput}
+                  required
                 ></input>
               </div>
             </div>
@@ -31,6 +32,7 @@ const QuestionForm = (props) => {
                   className="form-control user-input"
                   name="option1"
                   onChange={props.questionInput}
+                  required
                 ></input>
               </div>
               <div className="col-md-2 text-center">
@@ -42,6 +44,7 @@ const QuestionForm = (props) => {
                   className="form-control user-input"
                   name="option2"
                   onChange={props.questionInput}
+                  required
                 ></input>
               </div>
             </div>
@@ -55,6 +58,7 @@ const QuestionForm = (props) => {
                   className="form-control user-input"
                   name="option3"
                   onChange={props.questionInput}
+                  required
                 ></input>
               </div>
               <div className="col-md-2 text-center">
@@ -66,6 +70,7 @@ const QuestionForm = (props) => {
                   className="form-control user-input"
                   name="option4"
                   onChange={props.questionInput}
+                  required
                 ></input>
               </div>
             </div>
@@ -78,11 +83,13 @@ const QuestionForm = (props) => {
                   className="form-control"
                   name="answer"
                   onChange={props.questionInput}
+                  required
                 >
+                  <option value="">Choose Answer</option>
                   <option>{props.optionsValue.option1}</option>
                   <option>{props.optionsValue.option2}</option>
                   <option>{props.optionsValue.option3}</option>
-                  <option>{props.optionsValue.option4}</option>                  
+                  <option>{props.optionsValue.option4}</option>
                 </select>
               </div>
               <div className="col-md-2 text-center">
@@ -90,10 +97,13 @@ const QuestionForm = (props) => {
               </div>
               <div className="col-md-4">
                 <input
+                  min="1"
+                  max="99"
                   type="number"
                   className="form-control user-input"
                   name="marks"
                   onChange={props.questionInput}
+                  required
                 ></input>
               </div>
             </div>

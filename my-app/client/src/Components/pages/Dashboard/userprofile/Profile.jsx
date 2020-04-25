@@ -75,6 +75,7 @@ class Profile extends Component {
               name="firstname"
               className="form-control"
               disabled={this.state.disabled ? "disabled" : ""}
+              required
             ></input>
           </div>
           <div className="form-group">
@@ -86,6 +87,7 @@ class Profile extends Component {
               className="form-control"
               onChange={this.inputHandler}
               disabled={this.state.disabled ? "disabled" : ""}
+              required
             ></input>
           </div>
           <div className="form-group">
@@ -97,6 +99,7 @@ class Profile extends Component {
               className="form-control"
               onChange={this.inputHandler}
               disabled={this.state.disabled ? "disabled" : ""}
+              required
             ></input>
           </div>
           <div className="form-group">
@@ -108,6 +111,7 @@ class Profile extends Component {
               className="form-control"
               onChange={this.inputHandler}
               disabled={this.state.disabled ? "disabled" : ""}
+              required
             ></input>
           </div>
           <div>

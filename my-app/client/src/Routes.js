@@ -8,15 +8,13 @@ import Logout from './Components/pages/Logout/Logout';
 import apps from './appsBasic';
 import PropTypes from "prop-types";
 import Sidebar from "./Components/basic/Sidebar";
-import AddTest from "./Components/pages/Dashboard/createtest/AddTest";
+import AddTest from "./Components/pages/Dashboard/Createtest/AddTest";
 import app from "./appsBasic";
-//import TestHistory from "./Components/pages/Dashboard/testhistory/TestHistory";
-import Profile from "./Components/pages/Dashboard/userprofile/Profile";
-import Results from "./Components/pages/Dashboard/testresults/Result";
+import Profile from "./Components/pages/Dashboard/UserProfile/Profile";
+import Results from "./Components/pages/Dashboard/TestResults/Result";
 import About from './Components/pages/About/About';
 import UserTest from './Components/pages/Usertest/UserContainer';
-import ShowTest from './Components/pages/Dashboard/createtest/Showtest';
-import History from './Components/pages/Dashboard/testhistory/HistoryContainer';
+import History from './Components/pages/Dashboard/TestHistory/HistoryContainer';
 
 const Content = () => (
   <BrowserRouter>
@@ -32,7 +30,6 @@ const Content = () => (
       <RequiresAuthentication path="/test-history" component={History} />
       <RequiresAuthentication path="/profile" component={Profile} />
       <RequiresAuthentication path="/results" component={Results} />
-      <RequiresAuthentication path="/show-test/:id" component={ShowTest} />
     </Switch>
   </BrowserRouter>
 );

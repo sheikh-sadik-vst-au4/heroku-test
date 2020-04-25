@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
     })
 }
 
+
 connectDB().then(() => {
     app.listen(PORT, () => console.log(`app listen to port ${PORT}`));
-});
-
+})
