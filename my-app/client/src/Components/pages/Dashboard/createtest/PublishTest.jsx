@@ -1,10 +1,6 @@
 import React from "react";
 import app from "../../../../appsBasic";
-<<<<<<< HEAD:test mania/client/src/Components/pages/Dashboard/createtest/PublishTest.jsx
 import swal from "sweetalert";
-=======
-import swal from 'sweetalert';
->>>>>>> master:view/src/Components/pages/Dashboard/createtest/PublishTest.jsx
 
 const PublishTest = (props) => {
   return (
