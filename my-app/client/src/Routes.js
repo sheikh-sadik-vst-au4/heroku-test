@@ -8,13 +8,13 @@ import Logout from './Components/pages/Logout/Logout';
 import apps from './appsBasic';
 import PropTypes from "prop-types";
 import Sidebar from "./Components/basic/Sidebar";
-import AddTest from "./Components/pages/Dashboard/Createtest/AddTest";
+import AddTest from "./Components/pages/Dashboard/createtest/AddTest";
 import app from "./appsBasic";
-import Profile from "./Components/pages/Dashboard/UserProfile/Profile";
-import Results from "./Components/pages/Dashboard/TestResults/Result";
+import Profile from "./Components/pages/Dashboard/userProfile/Profile";
+import Results from "./Components/pages/Dashboard/testresults/Result";
 import About from './Components/pages/About/About';
 import UserTest from './Components/pages/Usertest/UserContainer';
-import History from './Components/pages/Dashboard/TestHistory/HistoryContainer';
+import History from './Components/pages/Dashboard/testhistory/HistoryContainer';
 
 const Content = () => (
   <BrowserRouter>
